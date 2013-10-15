@@ -1,0 +1,253 @@
+// version 0.1.0
+
+@import "normalize"
+@import "//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,700,700italic"
+@import "//fonts.googleapis.com/css?family=Source+Code+Pro:400,400italic,700,700italic"
+
+// colors
+
+$background: #EEE
+$foreground: #111
+$indent-color: #BBB
+$rule-color: $indent-color
+$block-border-color: $rule-color
+$block-background: #DDD
+$table-rule-color: #222
+
+// typography
+
+body
+  font-family: "Source Sans Pro", Helvetica, sans-serif
+  background-color: $background
+  color: $foreground
+  @media (max-width: 400px)
+    font-size: 10pt
+    margin-left: 10px
+    margin-right: 10px
+    margin-top: 10px
+    margin-bottom: 15px
+  @media (min-width: 401px) and (max-width: 600px)
+    font-size: 12pt
+    margin-left: 10px
+    margin-right: 10px
+    margin-top: 10px
+    margin-bottom: 15px
+  @media (min-width: 601px) and (max-width: 900px)
+    font-size: 13pt
+    margin-left: 100px
+    margin-right: 100px
+    margin-top: 20px
+    margin-bottom: 25px
+  @media (min-width: 901px)
+    font-size: 14pt
+    margin-left: 200px
+    margin-right: 200px
+    margin-top: 30px
+    margin-bottom: 25px
+  max-width: 800px
+  line-height: 1.1em
+  text-align: justify
+
+p
+  margin-top: 10px
+  margin-bottom: 15px
+
+em
+  font-style: italic
+
+strong
+  font-weight: bold
+
+// headers
+
+h1, h2, h3, h4, h5, h6
+  font-weight: bold
+  padding-top: .2em
+  margin-bottom: .1em
+
+header
+  &>h1
+    border: none
+    padding: 0px
+    margin: 0px 0px 15px 0px
+    font-size: 200%
+  &>h2
+    border: none
+    padding: 0px
+    margin: 0px 0px 10px 0px
+    font-style: normal
+    font-size: 150%
+  &>h3
+    padding: 0px
+    margin: 0px 0px 10px 0px
+    font-size: 125%
+    font-style: italic
+  padding-bottom: 5px
+  border-bottom: 1px solid $rule-color
+  margin-bottom: 20px
+  & + h1
+    border-top: none
+    padding-top: 0px
+
+h1
+  border-top: 1px solid $rule-color
+  &:first-of-type
+    border: none
+  padding-top: 15px
+  font-size: 150%
+  margin-bottom: 10px
+
+h2
+  font-size: 125%
+  font-style: italic
+
+h3
+  font-size: 105%
+  font-style: italic
+
+// horizonal rules
+
+hr
+  border: 0px
+  border-top: 1px solid $rule-color
+  width: 100%
+  height: 0px
+  & + h1
+    border-top: none
+    padding-top: 0px
+
+// lists
+
+%list
+  font-size: 90%
+  margin-top: 10px
+  margin-bottom: 15px
+  padding-left: 30px
+
+ul
+  @extend %list
+  list-style: circle
+
+ol
+  @extend %list
+  list-style: decimal
+
+li
+  margin-top: 5px
+  margin-bottom: 7px
+
+// quotes
+
+q
+  font-style: italic
+  font-size: 90%
+
+blockquote
+  @extend q
+  quotes: none
+  border-left: 5px $indent-color solid
+  padding-left: 10px
+  margin: 0px
+
+// links
+
+a, a:link, a:visited, a:hover
+  color: inherit
+  text-decoration: none
+  border-bottom: 1px dashed $foreground
+  &:hover
+    border-bottom-style: solid
+
+// inline code and code blocks
+
+code
+  font-family: "Source Code Pro", "Consolas", "Monaco", monospace
+  font-size: 90%
+  background: $block-background
+  border: 1px solid $block-border-color
+  padding: 0px 2px 0px 2px
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  border-radius: 3px
+
+pre
+  margin-left: 25px
+  margin-right: 15px
+  display: block
+  &>code
+    display: block
+    font-size: 70%
+    padding: 10px
+    -webkit-border-radius: 5px
+    -moz-border-radius: 5px
+    border-radius: 5px
+
+// tabular data
+
+caption
+  font-size: 80%
+  font-style: italic
+  text-align: right
+  margin-bottom: 5px
+
+table
+  width: 100%
+  margin-top: 1em
+  margin-bottom: 1em
+  & + h1
+    border-top: none
+
+tr
+  td, th
+    padding: 0.2em 0.7em
+
+  &.header
+    border-top: 1px solid $table-rule-color
+    border-bottom: 1px solid $table-rule-color
+    font-weight: 600
+
+  &.odd
+    background: #EEEEEE
+
+  &.even
+    background: #CCCCCC
+
+tbody:last-child // last row
+  border-bottom: 1px solid $table-rule-color
+
+// definition lists
+
+dt
+  font-weight: 600
+  &:after
+    font-weight: normal
+    content: ":"
+  margin-bottom: 3px
+
+dd
+  @extend blockquote
+  margin-bottom: 10px
+
+// images
+img
+  max-width: 100%
+  padding: 0px
+  margin-top: 15px
+  margin-bottom: 10px
+  background: $block-background
+  border: 1px solid $block-border-color
+  -webkit-border-radius: 5px
+  -moz-border-radius: 5px
+  border-radius: 5px
+  & + figcaption
+    margin-top: -10px
+    margin-bottom: 15px
+
+figcaption
+  @extend caption
+
+// footnotes
+
+.footnotes
+  font-size: 70%
+  font-style: italic
