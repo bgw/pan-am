@@ -139,6 +139,9 @@ ol
   @extend %list
   list-style: decimal
 
+ul ul, ol ol, ul ol, ol ul
+  font-size: inherit
+
 li
   margin-top: 5px
   margin-bottom: 7px
@@ -155,6 +158,10 @@ blockquote
   border-left: 5px $indent-color solid
   padding-left: 10px
   margin: 0px
+
+blockquote blockquote, ol blockquote, ul blockquote, blockquote ol,
+blockquote ul
+  font-size: inherit
 
 // links
 
@@ -189,6 +196,9 @@ pre
     -moz-border-radius: 5px
     border-radius: 5px
     overflow-x: auto
+
+blockquote pre>code, ul pre>code, ol pre>code
+  font-size: (70%/0.9)
 
 // tabular data
 
