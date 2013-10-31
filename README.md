@@ -15,6 +15,11 @@ Simple to Use
 -------------
 
     curl -O http://b.enjam.info/panam/styling.css
+    pandoc --css=styling.css -V lang=en -V highlighting-css= --mathjax \
+           --smart --to=html5 input.md -o output.html
+
+or, if you don't need all the fancy bells-and-whistles,
+
     pandoc --css=styling.css --to=html5 input.md -o output.html
 
 Easy to Develop
@@ -39,15 +44,19 @@ We focus on modern web standards, and target Pandoc's `html5` output target.
 Typography
 ----------
 
-We use Adobe's free *Source Sans Pro* and *Source Code Pro* for all our text.
-It's a simple and easy to read modern sans-serif font that's good for print and
-web. Webfonts are loaded through Google's Webfonts service, so you don't have to
-worry about hosting a dozen `woff`, `otf`, `svg`, and `eot` variants.
+We use *Libre Baskerville*, a screen-optimized font based on Baskerville, and
+Adobe's free *Source Code Pro* for all our text. Webfonts are loaded through
+Google's Webfonts service, so you don't have to worry about hosting a dozen
+`woff`, `otf`, `svg`, and `eot` variants.
 
 In case the user's browser doesn't support CSS3's `@font-face` directive, we
 fall back to sane defaults.
 
 To improve readability, wide responsive margins are used with justified text.
+[Experimental CSS4 hyphenation][] is used on browsers that support it, reducing
+the effects of rivers.
+
+  [Experimental CSS4 hyphenation]: http://generatedcontent.org/post/44751461516/
 
 Sectioning
 ----------

@@ -11,7 +11,8 @@ test: compile
 	mkdir -p test_html
 	$(foreach i,$(TEST_MD),\
 		$(PANDOC) $(i) -o $(patsubst test_md/%.md,test_html/%.html,$(i)) \
-		          --standalone -t html5 --mathjax -c ../styling.css ;\
+		          --standalone -t html5 --mathjax --smart -V highlighting-css= \
+	              -V lang=en -c ../styling.css ;\
 	)
 
 clean:
