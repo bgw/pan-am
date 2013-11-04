@@ -1,0 +1,3 @@
+[submodule "noisy-uris"]
+	path = noisy-uris
+	url = git://github.com/markdurrant/noisy-uris.git
