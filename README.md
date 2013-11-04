@@ -1,7 +1,7 @@
 Pan Am: *Simple CSS for Pandoc*
 ===============================
 
-![](http://b.enjam.info/panam/screenshot.png)
+![](http://b.enjam.info/panam/screenshot.png#updated)
 
 Pandoc outputs HTML without any styling. That's boring and ugly. This is some
 simple CSS for stand-alone Pandoc documents that serves as a good default.
