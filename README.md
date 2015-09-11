@@ -14,7 +14,7 @@ semantically structured HTML5 documents, if they're written well enough.
 Simple to Use
 -------------
 
-    curl -O http://b.enjam.info/panam/styling.css
+    curl -LO http://b.enjam.info/panam/styling.css
     pandoc --css=styling.css -V lang=en -V highlighting-css= --mathjax \
            --smart --to=html5 input.md -o output.html
 
